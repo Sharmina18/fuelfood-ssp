@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none;
+}
+
+@font-face {
+    font-family: 'khand';
+    src: url('/public/fonts/Khand-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
