@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ route('home') }}">
 {{--                    <x-application-mark class="block h-9 w-auto" />--}}
                         <img src="{{ asset('images/finallogo.png') }}" alt="Logo" class="mr-3 h-10 ">
                     </a>

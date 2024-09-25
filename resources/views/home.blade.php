@@ -21,6 +21,12 @@
         <!-- alpine.js -->
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.0/dist/cdn.min.js"></script>
 
+        <style>
+            .scale-105 {
+                transform: scale(1.05);
+            }
+        </style>
+
     </head>
     <body class="bg-somewhite">
         <!-- HEADER -->
@@ -76,25 +82,58 @@
         </header>
 
         <section>
+
         <!-- MAIN IMAGE + TEXT -->
         <div class="grid grid-cols-2">
 
-            <div>
-                <img src="{{ asset('images/img22.png') }}" alt="My Image" class="h-auto">
+            <div x-data="{ hover: false }">
+
+                <img
+                    x-show="hover"
+                    src="{{ asset('images/text1.png') }}"
+                    alt="My Image"
+                    class="absolute top-10 left-80 h-auto transition-transform duration-300 ease-in-out w-80"
+                >
+
+                <img
+                    :class="{ 'scale-105': hover }"
+                    src="{{ asset('images/img22.png') }}"
+                    alt="My Image"
+                    class="h-auto transition-transform duration-300 ease-in-out"
+                    @mouseover="hover = true"
+                    @mouseleave="hover = false"
+                >
+
+                <img
+                    x-show="hover"
+                    src="{{ asset('images/text2.png') }}"
+                    alt="My Image"
+                    class="absolute bottom-5 right-1/3 h-auto transition-transform duration-300 ease-in-out w-96"
+                >
+
+{{--                <div--}}
+{{--                    x-show="hover"--}}
+{{--                    class="absolute top-0 left-0 text-white bg-black bg-opacity-50 p-2"--}}
+{{--                    style="display: none;" --}}
+{{--                >--}}
+{{--                Hi!--}}
+{{--                </div>--}}
+
             </div>
 
-            <div class="text-center font-khand font-bold pt-56 pb-32 pr-44 text-black">
+            <div class="text-center font-khand font-semibold pt-56 pb-32 pr-44 text-black">
                 <h1 class="text-8xl"><span class="text-9xl hover:text-somegreen">Food</span> made</h1>
                 <h1 class="text-8xl">to <span class="text-9xl hover:text-somegreen">Fuel</span> you</h1>
                 <br>
                 <div class="flex flex-row justify-center gap-10">
                     <a href="/about" class="bg-somegreen text-3xl text-random px-6 py-2 rounded-md hover:bg-somegreen hover:text-black">View Menu</a>
-                    <a href="/about" class="bg-somegreen text-3xl text-random px-6 py-2 rounded-md hover:bg-somegreen hover:text-black">View Plans</a>
+                    <a href="/subs" class="bg-somegreen text-3xl text-random px-6 py-2 rounded-md hover:bg-somegreen hover:text-black">View Plans</a>
                 </div>
             </div>
         </div>
         </section>
 
+<br><br><br>
 
         <!-- ABOUT SECTION -->
         <section>
@@ -106,17 +145,116 @@
                     plans tailored to your preferences. We make healthy eating easy and delicious, so you can focus on crushing
                     your workouts.</p>
                 <div class="p-6">
-                <a href="/about" class="bg-somegreen text-3xl text-random p-6 py-2 rounded-md hover:bg-somegreen hover:text-black">About Us</a>
+                <a href="/about" class="bg-somegreen text-3xl font-bold text-random p-6 py-2 rounded-md hover:bg-somegreen hover:text-black">About Us</a>
                 </div>
             </div>
 
             <div>
-                <img src="{{ asset('images/aboutUs.jpg') }}" alt="My Image" class="h-fit p-6">
-                <!--embed google maps link-->
-{{--                <iframe class="h-fit p-7" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.073682073073!2d79.8613663147725!3d6.9274229950000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae259f1b1b1b1b1%3A0x1b1b1b1b1b1b1b1!2sColombo%20City%20Centre!5e0!3m2!1sen!2slk!4v1633663660734!5m2!1sen!2slk" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>--}}
+                <img src="{{ asset('images/aboutUs2.jpg') }}" alt="My Image" class="h-fit p-6">
             </div>
         </div>
         </section>
+
+        <br><br><br><br><br><br><br>
+
+        <!-- SUBSCRIPTIONS SECTION -->
+        <section>
+            <div class="">
+                <h1 class="font-khand text-7xl text-center font-bold">Meal Subscriptions</h1>
+                    <p class="font-khand text-2xl py-5 text-center pb-32">You can subscribe to weekly or monthly meal plans according to your fitness preference and
+                        have healthy meals delivered to your doorstep!</p>
+
+                <!-- SUBSCRIPTIONS GRID -->
+                <!-- GRID 1 -->
+                <div class="grid grid-cols-2 gap-4 px-16 mb-24">
+                    <div class="mx-44">
+                        <h2 class="text-2xl font-khand font-bold"><span class="text-5xl">1.</span> choose fitness</h2>
+                        <h2 class="text-8xl font-khand font-bold text-somegreen">Goal</h2>
+                        <p class="text-random2 text-lg font-bold">What's your weight journey goal? Gain, lose, or maintain?</p>
+                    </div>
+
+                    <div>
+                        <img
+                            src="{{ asset('images/arrow1.png') }}"
+                            alt="My Image"
+                            class="absolute w-60 h-auto right-1/3 mr-16 mt-16"
+                        >
+                    </div>
+                </div>
+
+                <!-- GRID 2 -->
+                <div class="grid grid-cols-2 gap-4 px-16 mb-24">
+                    <div>
+                        <img
+                            src="{{ asset('images/arrow2.png') }}"
+                            alt="My Image"
+                            class="absolute w-60 h-auto left-1/3 ml-12 mt-20"
+                        >
+                    </div>
+
+                    <div class="mx-44">
+                        <h2 class="text-2xl font-khand font-bold"><span class="text-5xl">2.</span> choose meal</h2>
+                        <h2 class="text-8xl font-khand font-bold text-somegreen">Preference</h2>
+                        <p class="text-random2 text-lg font-bold">We cater to all dietary needs. Vegan, vegetarian, pescatarian, gluten-free, allergies...anything!</p>
+                    </div>
+                </div>
+
+                <!-- GRID 3 -->
+                <div class="grid grid-cols-2 gap-4 px-16 mb-24">
+                    <div class="mx-44">
+                        <h2 class="text-2xl font-khand font-bold"><span class="text-5xl">3.</span> choose subscription</h2>
+                        <h2 class="text-8xl font-khand font-bold text-somegreen">Period</h2>
+                        <p class="text-random2 text-lg font-bold">Tailored to your schedule: weekly, monthly, or quarterly.</p>
+                    </div>
+
+                    <div>
+                        <img
+                            src="{{ asset('images/arrow1.png') }}"
+                            alt="My Image"
+                            class="absolute w-60 h-auto right-1/3 mr-16 mt-16"
+                        >
+                    </div>
+                </div>
+
+                <!-- GRID 4 -->
+                <div class="grid grid-cols-2 gap-4 px-16 mb-24">
+                    <div>
+                    </div>
+
+                    <div class="mx-44">
+                        <h2 class="text-2xl font-khand font-bold"><span class="text-5xl">4.</span> have meals delivered to your</h2>
+                        <h2 class="text-8xl font-khand font-bold text-somegreen">Home!</h2>
+                    </div>
+                </div>
+
+            </div>
+
+            <br>
+
+            <div class="flex justify-center items-center m-auto gap-10"  x-data="{ hover: false }">
+                <img
+                    x-show="hover"
+                    src="{{ asset('images/text3.png') }}"
+                    alt="My Image"
+                    class="absolute left-32 pb-10 mb-96 h-auto transition-transform duration-300 ease-in-out w-80"
+                >
+
+                <img
+                    :class="{ 'scale-105': hover }"
+                    src="{{ asset('images/pack.png') }}"
+                    alt="My Image"
+                    class="w-1/2 h-auto transition-transform duration-300 ease-in-out"
+                    @mouseover="hover = true"
+                    @mouseleave="hover = false"
+                >
+
+                <a href="/subs" class="bg-somegreen font-khand font-bold text-5xl text-random
+                   px-8 py-4 rounded-md hover:bg-somegreen hover:text-black mt-5">Subscribe Now!</a>
+            </div>
+
+        </section>
+
+        <br><br>
 
         <section class="pb-20">
         <!-- MENU SECTION -->
@@ -146,7 +284,7 @@
                     <div class="group">
                     <div class="relative overflow-hidden">
                         <img src="{{ asset('images/muscleGain.jpg') }}" alt="My Image" class="object-cover">
-                        <div class="absolute h-full w-full bg-black/20 flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <div class="absolute h-full w-full bg-black/20 flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100">
                             <button class=" font-khand font-bold text-3xl bg-black text-somegreen py-4 px-5">Muscle Gain Menu</button>
                         </div>
                     </div>
@@ -155,7 +293,7 @@
                     <div class="group">
                         <div class="relative overflow-hidden">
                             <img src="{{ asset('images/weightloss.jpg') }}" alt="My Image" class="object-cover">
-                            <div class="absolute h-full w-full bg-black/20 flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                            <div class="absolute h-full w-full bg-black/20 flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100">
                                 <button class=" font-khand font-bold text-3xl bg-black text-somegreen py-4 px-5">Weight Loss Menu</button>
                             </div>
                         </div>
@@ -164,7 +302,7 @@
                     <div class="group">
                         <div class="relative overflow-hidden">
                             <img src="{{ asset('images/balance.jpg') }}"  alt="My Image" class="object-cover">
-                            <div class="absolute h-full w-full bg-black/20 flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                            <div class="absolute h-full w-full bg-black/20 flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100">
                                 <button class=" font-khand font-bold text-3xl bg-black text-somegreen py-4 px-5">Balance Menu</button>
                             </div>
                         </div>
@@ -175,7 +313,7 @@
                     <div class="group">
                         <div class="relative overflow-hidden">
                             <img src="{{ asset('images/shake.jpg') }}"  alt="My Image" class="object-cover">
-                            <div class="absolute h-full w-full bg-black/20 flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                            <div class="absolute h-full w-full bg-black/20 flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100">
                                 <button class=" font-khand font-bold text-3xl bg-black text-somegreen py-4 px-5">Protein Shakes</button>
                             </div>
                         </div>
@@ -184,7 +322,7 @@
                     <div class="group">
                         <div class="relative overflow-hidden">
                             <img src="{{ asset('images/snaccc.jpg') }}"  alt="My Image" class="object-cover">
-                            <div class="absolute h-full w-full bg-black/20 flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                            <div class="absolute h-full w-full bg-black/20 flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100">
                                 <button class=" font-khand font-bold text-3xl bg-black text-somegreen py-4 px-5">Snacks</button>
                             </div>
                         </div>
@@ -193,7 +331,7 @@
                     <div class="group">
                         <div class="relative overflow-hidden">
                             <img src="{{ asset('images/coffee2.jpg') }}"  alt="My Image" class="object-cover">
-                            <div class="absolute h-full w-full bg-black/20 flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                            <div class="absolute h-full w-full bg-black/20 flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100">
                                 <button class=" font-khand font-bold text-3xl bg-black text-somegreen py-4 px-5">Beverages</button>
                             </div>
                         </div>
@@ -202,7 +340,7 @@
                     <div class="group">
                         <div class="relative overflow-hidden">
                             <img src="{{ asset('images/muffins.jpg') }}"  alt="My Image" class="object-cover">
-                            <div class="absolute h-full w-full bg-black/20 flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                            <div class="absolute h-full w-full bg-black/20 flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100">
                                 <button class=" font-khand font-bold text-3xl bg-black text-somegreen py-4 px-5">Desserts</button>
                             </div>
                         </div>
@@ -211,23 +349,6 @@
             </div>
 
         </section>
-
-{{--        <section>--}}
-{{--            <!-- SUBSCRIPTIONS SECTION -->--}}
-{{--            <div class="flex flex-row px-20">--}}
-{{--                <div class="w-1/2">--}}
-{{--                    <div></div>--}}
-{{--                    <div></div>--}}
-{{--                    <div></div>--}}
-{{--                </div>--}}
-
-{{--                <div class="">--}}
-{{--                    <h1 class="font-khand font-bold text-7xl text-right">Our Subscription<br>Plans</h1>--}}
-{{--                    <p class="font-khand text-right text-2xl">You can subscribe to weekly or monthly meal plans according to your fitness preference and--}}
-{{--                        have healthy meals delivered to your doorstep!</p>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </section>--}}
 
         <br><br>
 

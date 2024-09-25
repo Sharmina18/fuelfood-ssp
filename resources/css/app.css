@@ -12,3 +12,25 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'khand';
+    src: url('/public/fonts/Khand-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'khand';
+    src: url('/public/fonts/Khand-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'khand';
+    src: url('/public/fonts/Khand-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+

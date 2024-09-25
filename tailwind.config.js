@@ -15,6 +15,10 @@ export default {
         extend: {
             fontFamily: {
                 'khand': ['Khand', 'sans-serif'],
+                'khand-bold': ['Khand-Bold', 'sans-serif'],
+                'khand-light': ['Khand-Light', 'sans-serif'],
+                'khand-medium': ['Khand-Medium', 'sans-serif'],
+                'khand-semibold': ['Khand-SemiBold', 'sans-serif'],
             },
             colors: {
                 'random': '#d7edbb',
