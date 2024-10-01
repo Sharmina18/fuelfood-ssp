@@ -28,7 +28,10 @@ class DatabaseSeeder extends Seeder
 
         Reservation::factory(10)->create();
 
-        Category::factory(10)->create();
+        $this->call([
+            CategorySeeder::class,
+            ProductSeeder::class,
+        ]);
 
         Subscription::factory(10)->create();
 

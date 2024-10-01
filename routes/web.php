@@ -8,6 +8,7 @@ use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\SubsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\MenuController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
@@ -17,6 +18,8 @@ Route::get('/subs', SubsController::class)->name('subs');
 Route::get('/contact', ContactController::class)->name('contact');
 
 Route::get('/about', AboutController::class)->name('about');
+
+Route::get('/menu', MenuController::class)->name('menu');
 
 Route::get('/welcome', function () {
     return view('welcome');
