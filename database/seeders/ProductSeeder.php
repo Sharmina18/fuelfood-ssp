@@ -2,7 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Database\Seeder;
+
+use Illuminate\Support\Str;
 
 class ProductSeeder extends Seeder
 {
@@ -111,8 +115,23 @@ class ProductSeeder extends Seeder
 
         foreach ($products as $category => $items) {
             foreach ($items as $item) {
+                // Find category
+                $categoryModel = Category::where('title', $category)->first();
+                if ($categoryModel) {
+                    // Generate unique slug
+                    $baseSlug = Str::slug($item['name']);
+                    $slug = $baseSlug;
+                    $count = 1;
+
+                    while (Product::where('slug', $slug)->exists()) {
+                        $slug = $baseSlug . '-' . $count;
+                        $count++;
+                    }
+                }
+
                 \App\Models\Product::create([
                     'name' => $item['name'],
+                    'slug' => $slug,
                     'description' => $item['description'],
                     'price' => $item['price'],
                     'category_id' => \App\Models\Category::where('title', $category)->first()->id,

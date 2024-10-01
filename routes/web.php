@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\SubsController;
@@ -35,6 +36,9 @@ Route::resource('subscriptions', SubscriptionController::class)
     ->middleware('auth');
 
 Route::resource('customers', CustomerController::class)
+    ->middleware('auth');
+
+Route::resource('products', ProductController::class)
     ->middleware('auth');
 
 Route::middleware([
