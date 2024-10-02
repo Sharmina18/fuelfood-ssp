@@ -40,7 +40,7 @@
 
         <div class="flex gap-6">
             <a href="/menu" class="text-black text-xl hover:text-random2">Menu</a>
-            <a href="/contact" class="text-black text-xl hover:text-random2">Contact</a>
+            <a href="/subs" class="text-black text-xl hover:text-random2">Subscription</a>
             <a href="/about" class="text-black text-xl hover:text-random2">About</a>
         </div>
         <span class="rotate-90">
@@ -80,6 +80,91 @@
         @endif
     </div>
 </header>
+
+<!-- MAIN CONTENT -->
+    <div class="text-center font-khand font-semibold text-black pb-20">
+        <h1 class="text-6xl">Subscription</h1>
+    </div>
+
+<div class="flex flex-row justify-center gap-52">
+    <div class="w-64 flex flex-col justify-center items-center text-center">
+        <img src="{{ asset('images/clipboard.png') }}" alt="Subscription" class="w-40 h-fit mb-5">
+        <br>
+        <h3 class="font-khand font-bold text-4xl">Curate your Meals</h3>
+        <p class="font-khand text-random2 text-xl">Share your fitness goal, meal preferences, and desired subscription duration with us.</p>
+    </div>
+
+    <div class="w-64 flex flex-col justify-center items-center text-center">
+        <img src="{{ asset('images/cooking.png') }}" alt="Subscription" class="w-40 h-fit mb-5">
+        <br>
+        <h3 class="font-khand font-bold text-4xl">Cooked for You</h3>
+        <p class="font-khand text-random2 text-xl">Our chefs will handle all the prepping and cooking, customized perfectly to your needs.</p>
+    </div>
+
+    <div class="w-64 flex flex-col justify-center items-center text-center">
+        <img src="{{ asset('images/oven.png') }}" alt="Subscription" class="w-40 h-fit mb-3">
+        <br>
+        <h3 class="font-khand font-bold text-4xl">Heat, Eat & Enjoy</h3>
+        <p class="font-khand text-random2 text-xl">Our fitness meals come fully prepared—just heat and enjoy—so you can focus on other things.</p>
+    </div>
+</div>
+
+<br><br><br>
+
+<div class="mx-auto max-w-4xl p-8 bg-random3 rounded-lg shadow-lg font-khand">
+    <h2 class="text-center font-khand font-semibold text-gray-900 pb-8 text-3xl">Join Now and Get Your Meals!</h2>
+
+    <form method="POST" class="space-y-6" action="{{ route('subscriptions.store') }}">
+        @csrf
+        <!-- Name -->
+        <div>
+            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+            <input type="text" name="name" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-700" placeholder="Enter your name">
+        </div>
+
+        <!-- Meal Plan -->
+        <div>
+            <label for="meal_goal" class="block text-gray-700 text-sm font-bold mb-2">Meal Plan</label>
+            <select name="meal_goal" id="meal_goal" class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-700">
+                <option value="muscle_gain">Muscle Gain</option>
+                <option value="weight_loss">Weight Loss</option>
+                <option value="maintain">Maintain</option>
+            </select>
+        </div>
+
+        <!-- Dietary Restrictions -->
+        <div>
+            <label for="dietary_restrictions" class="block text-gray-700 text-sm font-bold mb-2">Dietary Restrictions</label>
+            <input type="text" name="dietary_restrictions" id="dietary_restrictions" class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-700" placeholder="Enter any dietary restrictions">
+        </div>
+
+        <!-- Duration -->
+        <div>
+            <label for="duration" class="block text-gray-700 text-sm font-bold mb-2">Duration</label>
+            <select name="duration" id="duration" class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-700">
+                <option value="1_week">1 Week</option>
+                <option value="2_weeks">2 Weeks</option>
+                <option value="1_month">1 Month</option>
+            </select>
+        </div>
+
+        <!-- Address -->
+        <div>
+            <label for="address" class="block text-gray-700 text-sm font-bold mb-2">Address</label>
+            <input type="text" name="address" id="address" class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-700" placeholder="Enter your address">
+        </div>
+
+        <!-- Submit Button -->
+        <div class="flex justify-center">
+            <button type="submit" class="w-full sm:w-auto bg-random2 hover:text-black text-white font-bold py-3 px-6 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                Get Started
+            </button>
+        </div>
+    </form>
+</div>
+
+
+<br><br><br>
 
 
 

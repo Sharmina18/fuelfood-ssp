@@ -13,19 +13,16 @@
                         <p class="text-lg">Name: {{ $subscription->name }}</p>
                     </div>
                     <div class="mt-6">
-                        <p class="text-lg">Phone: {{ $subscription->phone }}</p>
+                        <p class="text-lg">Meal Plan: {{ $subscription->meal_goal }}</p>
                     </div>
                     <div class="mt-6">
-                        <p class="text-lg">Email: {{ $subscription->email }}</p>
+                        <p class="text-lg">Dietary Restrictions: {{ $subscription->dietary_preference }}</p>
                     </div>
                     <div class="mt-6">
-                        <p class="text-lg">Start Date: {{ $subscription->start_date }}</p>
+                        <p class="text-lg">Duration: {{ $subscription->duration }}</p>
                     </div>
                     <div class="mt-6">
-                        <p class="text-lg">End Date: {{ $subscription->end_date }}</p>
-                    </div>
-                    <div class="mt-6">
-                        <p class="text-lg">Meal Preference: {{ $subscription->meal_preference }}</p>
+                        <p class="text-lg">Address: {{ $subscription->address }}</p>
                     </div>
                     <div class="mt-6">
                         <p class="text-lg">Created at: {{ $subscription->created_at }}</p>
@@ -36,9 +33,10 @@
                     <div class="pt-5">
                         <a href="{{ route('subscriptions.index') }}" class="bg-black hover:bg-gray-800 text-somegreen font-bold py-2 px-4 rounded">Back</a>
                     </div>
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
 </x-app-layout>
+

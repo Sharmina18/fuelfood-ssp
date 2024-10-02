@@ -13,50 +13,51 @@
                     @csrf
 
                     <div class="px-10">
-                    <div class="mt-4">
-                        <x-label for="name" :value="__('Name')" class="block text-gray-700 text-sm font-bold mb-2"/>
+                        <div class="mt-4">
+                            <x-label for="name" :value="__('Name')" class="block text-gray-700 text-sm font-bold mb-2"/>
 
-                        <x-input id="name" type="text" name="name" value="" required autofocus class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-                    </div>
+                            <x-input id="name" type="text" name="name" value="" required autofocus class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                        </div>
 
-                    <!-- field for phone -->
-                    <div class="mt-4">
-                        <x-label for="phone" :value="__('Phone')" class="block text-gray-700 text-sm font-bold mb-2"/>
+                        <!-- New Meal Plan Dropdown -->
+                        <div class="mt-4">
+                            <x-label for="meal_goal" :value="__('Choose Meal Plan')" class="block text-gray-700 text-sm font-bold mb-2"/>
+                            <select id="meal_goal" name="meal_goal" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                <option value="muscle_gain">Muscle Gain</option>
+                                <option value="weight_loss">Weight Loss</option>
+                                <option value="maintain">Maintain</option>
+                            </select>
+                        </div>
 
-                        <x-input id="phone" class="block mt-1 w-full" type="text" name="phone" value="" required />
-                    </div>
+                        <div class="mt-4">
+                            <x-label for="dietary_preference" :value="__('Dietary Restrictions')" class="block text-gray-700 text-sm font-bold mb-2"/>
+                            <input id="dietary_preference" type="text" name="dietary_preference" value="" autofocus class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                        </div>
 
-                    <div class="mt-4">
-                        <x-label for="email" :value="__('Email')" class="block text-gray-700 text-sm font-bold mb-2"/>
+                        <!-- New Duration Dropdown -->
+                        <div class="mt-4">
+                            <x-label for="duration" :value="__('Choose Duration')" class="block text-gray-700 text-sm font-bold mb-2"/>
+                            <select id="duration" name="duration" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                <option value="1_week">1 Week</option>
+                                <option value="2_weeks">2 Weeks</option>
+                                <option value="1_month">1 Month</option>
+                            </select>
+                        </div>
 
-                        <x-input id="email" class="block mt-1 w-full" type="text" name="email" value="" required />
-                    </div>
+                        <!-- New Address Field -->
+                        <div class="mt-4">
+                            <x-label for="address" :value="__('Address')" class="block text-gray-700 text-sm font-bold mb-2"/>
+                            <x-input id="address" type="text" name="address" value="" required autofocus class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                        </div>
 
-                    <div class="mt-4">
-                        <x-label for="start_date" :value="__('Start Date')" class="block text-gray-700 text-sm font-bold mb-2"/>
-
-                        <x-input id="start_date" class="block mt-1 w-full" type="date" name="start_date" value="" required />
-                    </div>
-
-                    <div class="mt-4">
-                        <x-label for="end_date" :value="__('End Date')" class="block text-gray-700 text-sm font-bold mb-2"/>
-
-                        <x-input id="end_date" class="block mt-1 w-full" type="date" name="end_date" value="" required />
-                    </div>
-
-                    <div class="mt-4">
-                        <x-label for="meal_preference" :value="__('Meal Preference')" class="block text-gray-700 text-sm font-bold mb-2"/>
-
-                        <x-input id="meal_preference" class="block mt-1 w-full" type="text" name="meal_preference" value="" required />
-                    </div>
-
-                    <div class="py-10">
-                        <button type="submit" class="bg-black hover:bg-gray-800 text-somegreen font-bold py-2 px-4 rounded">
-                            {{ __('Add Subscription') }}
-                        </button>
-                    </div>
+                        <div class="py-10">
+                            <button type="submit" class="bg-black hover:bg-gray-800 text-somegreen font-bold py-2 px-4 rounded">
+                                {{ __('Add Subscription') }}
+                            </button>
+                        </div>
                     </div>
                 </form>
+
 
             </div>
         </div>

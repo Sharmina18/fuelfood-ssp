@@ -10,11 +10,10 @@ class Subscription extends Model
     use HasFactory;
     protected $fillable = [
         'name',
-        'phone',
-        'email',
-        'start_date',
-        'end_date',
-        'meal_preference',
+        'duration',
+        'meal_goal',
+        'dietary_preference',
+        'address',
         'slug',
         'status',
     ];

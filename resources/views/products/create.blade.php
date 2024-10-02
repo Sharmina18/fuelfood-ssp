@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
                 <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
-                    <form action="{{ route('products.store') }}" method="POST">
+                    <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-4">
                             <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
@@ -28,7 +28,11 @@
                         <div class="mb-4">
                             <button type="submit" class="bg-black hover:bg-gray-800 text-somegreen font-bold py-2 px-4 rounded">Add Product</button>
                         </div>
-                        //category id
+                        <div class="mb-4">
+                            <label for="image" class="block text-gray-700 text-sm font-bold mb-2">Image</label>
+                            <input type="file" name="image" id="image" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        </div>
+{{--                        category id--}}
                         <div class="mb-4">
                             <label for="category_id" class="block text gray-700 text-sm font-bold mb-2">Category</label>
                             <select name="category_id" id="category_id" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">

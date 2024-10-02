@@ -4,53 +4,51 @@
             {{ __('Customers') }}
         </h2>
     </x-slot>
-
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+            <div class="bg-white shadow-xl sm:rounded-lg overflow-hidden">
 
-                <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
-                    <div class="text-xl">
-                        <a href="{{ route('customers.create') }}" class="bg-black hover:bg-gray-800 text-somegreen font-bold py-2 px-4 rounded">Add New Customer</a>
+                <!-- Header Section -->
+                <div class="p-6 sm:px-20 bg-gray-100 border-b border-gray-300">
+                    <div class="flex justify-between items-center">
+                        <a href="{{ route('customers.create') }}" class="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 rounded">Add New Customer</a>
                     </div>
                 </div>
+
+                <!-- Table Section -->
                 <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
-                    <table class="table-auto w-full">
+                    <table class="min-w-full bg-white shadow rounded-lg overflow-hidden">
                         <thead>
-                        <tr>
-                            <th class="px-4 py-2">ID</th>
-                            <th class="px-4 py-2">Name</th>
-                            <th class="px-4 py-2">Email</th>
-                            <th class="px-4 py-2">Phone</th>
-                            <th class="px-4 py-2">Date of Birth</th>
-                            <th class="px-4 py-2">Meal Preference</th>
-                            <th class="px-4 py-2">Dietary Restrictions</th>
-                            <th class="px-4 py-2">Action</th>
+                        <tr class="bg-gray-200 text-gray-700 uppercase text-sm leading-normal">
+                            <th class="px-6 py-3 text-left">ID</th>
+                            <th class="px-6 py-3 text-left">Name</th>
+                            <th class="px-6 py-3 text-left">Email</th>
+                            <th class="px-6 py-3 text-left">Phone</th>
+                            <th class="px-6 py-3 text-left">Date of Birth</th>
+                            <th class="px-6 py-3 text-left">Meal Preference</th>
+                            <th class="px-6 py-3 text-left">Dietary Restrictions</th>
+                            <th class="px-6 py-3 text-left">Action</th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="text-gray-600 text-sm font-light">
                         @foreach($customers as $customer)
-                            <tr>
-                                <td class="border px-4 py-2">{{ $customer->id }}</td>
-                                <td class="border px-4 py-2">{{ $customer->name }}</td>
-                                <td class="border px-4 py-2">{{ $customer->email }}</td>
-                                <td class="border px-4 py-2">{{ $customer->phone }}</td>
-                                <td class="border px-4 py-2">{{ $customer->dob }}</td>
-                                <td class="border px-4 py-2">{{ $customer->meal_preference }}</td>
-                                <td class="border px-4 py-2">{{ $customer->dietary_restrictions }}</td>
-                                <td class="border px-4 py-2">
-                                    <div>
-                                        <div class="py-0.5">
-                                            <a href="{{ route('customers.show', $customer->id) }}" class="bg-black hover:bg-gray-800 text-somegreen font-bold py-2 px-2 w-10 rounded">View</a>
-                                            <br><br>
-                                    <a href="{{ route('customers.edit', $customer->id) }}" class="bg-black hover:bg-gray-800 text-somegreen font-bold py-2 px-2 w-10 rounded">Edit</a>
-                                        </div>
-                                        <br>
-                                    <form action="{{ route('customers.destroy', $customer->id) }}" method="POST" class="inline">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded">Delete</button>
-                                    </form>
+                            <tr class="border-b border-gray-300 hover:bg-gray-50 transition duration-200">
+                                <td class="border px-6 py-4">{{ $customer->id }}</td>
+                                <td class="border px-6 py-4">{{ $customer->name }}</td>
+                                <td class="border px-6 py-4">{{ $customer->email }}</td>
+                                <td class="border px-6 py-4">{{ $customer->phone }}</td>
+                                <td class="border px-6 py-4">{{ $customer->dob }}</td>
+                                <td class="border px-6 py-4">{{ $customer->meal_preference }}</td>
+                                <td class="border px-6 py-4">{{ $customer->dietary_restrictions }}</td>
+                                <td class="border px-6 py-4 text-center">
+                                    <div class="flex flex-col space-y-1">
+                                        <a href="{{ route('customers.show', $customer->id) }}" class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 rounded">View</a>
+                                        <a href="{{ route('customers.edit', $customer->id) }}" class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 rounded">Edit</a>
+                                        <form action="{{ route('customers.destroy', $customer->id) }}" method="POST" class="inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 rounded w-full">Delete</button>
+                                        </form>
                                     </div>
                                 </td>
                             </tr>
@@ -61,5 +59,6 @@
             </div>
         </div>
     </div>
+
 
 </x-app-layout>
