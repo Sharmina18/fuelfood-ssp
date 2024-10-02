@@ -32,6 +32,11 @@
                     <x-nav-link href="{{ route('subscriptions.index') }}" :active="request()->routeIs('subscriptions.index')">
                         {{ __('Subscriptions') }}
                     </x-nav-link>
+
+                    <x-nav-link href="{{ route('products.index') }}" :active="request()->routeIs('products.index')">
+                        {{ __('Products') }}
+                    </x-nav-link>
+
                 </div>
             </div>
 

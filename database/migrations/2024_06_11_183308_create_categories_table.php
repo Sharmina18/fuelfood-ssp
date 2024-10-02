@@ -17,6 +17,11 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->text('description')->nullable();
             $table->boolean('status')->default(true);
+            $table->foreignId('parent_id')
+                ->nullable()
+                ->constrained('categories')
+                ->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -126,7 +126,7 @@
                 <h1 class="text-8xl">to <span class="text-9xl hover:text-somegreen">Fuel</span> you</h1>
                 <br>
                 <div class="flex flex-row justify-center gap-10">
-                    <a href="/about" class="bg-somegreen text-3xl text-random px-6 py-2 rounded-md hover:bg-somegreen hover:text-black">View Menu</a>
+                    <a href="/menu" class="bg-somegreen text-3xl text-random px-6 py-2 rounded-md hover:bg-somegreen hover:text-black">View Menu</a>
                     <a href="/subs" class="bg-somegreen text-3xl text-random px-6 py-2 rounded-md hover:bg-somegreen hover:text-black">View Plans</a>
                 </div>
             </div>
