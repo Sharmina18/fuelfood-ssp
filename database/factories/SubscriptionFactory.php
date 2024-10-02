@@ -18,11 +18,10 @@ class SubscriptionFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'phone' => $this->faker->phoneNumber(),
-            'email' => $this->faker->email(),
-            'start_date' => $this->faker->date(),
-            'end_date' => $this->faker->date(),
-            'meal_preference' => $this->faker->word(),
+            'duration' => $this->faker->name(),
+            'meal_goal' => $this->faker->name(),
+            'dietary_preference' => $this->faker->name(),
+            'address' => $this->faker->name(),
             'slug' => $this->faker->slug(),
             'status' => $this->faker->boolean(),
         ];

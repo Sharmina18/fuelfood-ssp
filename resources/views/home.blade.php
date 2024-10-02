@@ -40,7 +40,7 @@
 
                     <div class="flex gap-6">
                         <a href="/menu" class="text-black text-xl hover:text-random2">Menu</a>
-                        <a href="/contact" class="text-black text-xl hover:text-random2">Contact</a>
+                        <a href="/subs" class="text-black text-xl hover:text-random2">Subscription</a>
                         <a href="/about" class="text-black text-xl hover:text-random2">About</a>
                     </div>
                     <span class="rotate-90">
@@ -122,8 +122,8 @@
             </div>
 
             <div class="text-center font-khand font-semibold pt-56 pb-32 pr-44 text-black">
-                <h1 class="text-8xl"><span class="text-9xl hover:text-somegreen">Food</span> made</h1>
-                <h1 class="text-8xl">to <span class="text-9xl hover:text-somegreen">Fuel</span> you</h1>
+                <h1 class="text-8xl"><span class="text-9xl text-somegreen">Food</span> made</h1>
+                <h1 class="text-8xl">to <span class="text-9xl text-somegreen">Fuel</span> you</h1>
                 <br>
                 <div class="flex flex-row justify-center gap-10">
                     <a href="/menu" class="bg-somegreen text-3xl text-random px-6 py-2 rounded-md hover:bg-somegreen hover:text-black">View Menu</a>

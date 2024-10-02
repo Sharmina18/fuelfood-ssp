@@ -14,11 +14,10 @@ return new class extends Migration
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('phone');
-            $table->string('email');
-            $table->date('start_date');
-            $table->date('end_date');
-            $table->string('meal_preference');
+            $table->string('duration');
+            $table->string('meal_goal');
+            $table->string('dietary_preference')->nullable();
+            $table->string('address');
             $table->string('slug')->unique();
             $table->boolean('status')->default(true);
             $table->timestamps();

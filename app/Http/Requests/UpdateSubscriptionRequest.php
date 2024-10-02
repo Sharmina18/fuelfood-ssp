@@ -23,9 +23,10 @@ class UpdateSubscriptionRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255'],
-            'start_date' => ['required', 'date'],
-            'end_date' => ['required', 'date'],
-            'meal_preference' => ['required', 'string', 'max:255'],
+            'duration' => ['required', 'string', 'max:255'],
+            'meal_goal' => ['required', 'string', 'max:255'],
+            'dietary_preference' => ['nullable', 'string', 'max:255'],
+            'address' => ['required', 'string', 'max:255'],
         ];
     }
 }

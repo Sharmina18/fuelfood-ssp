@@ -38,7 +38,12 @@ class SubscriptionController extends Controller
 
         Subscription::create($validated);
 
-        return redirect()->route('subscriptions.index');
+        if ($request->is('subscriptions/create')) {
+            return redirect()->route('subscriptions.index');
+        }
+
+        // If not on create.blade.php, you can redirect back to the subs.blade.php or show a message
+        return back()->with('success', 'Subscription created successfully!');
     }
 
     /**

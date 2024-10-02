@@ -40,7 +40,7 @@
 
         <div class="flex gap-6">
             <a href="/menu" class="text-black text-xl hover:text-random2">Menu</a>
-            <a href="/contact" class="text-black text-xl hover:text-random2">Contact</a>
+            <a href="/subs" class="text-black text-xl hover:text-random2">Subscription</a>
             <a href="/about" class="text-black text-xl hover:text-random2">About</a>
         </div>
         <span class="rotate-90">
@@ -83,12 +83,20 @@
 
 <section>
      <!-- MENU -->
+    <h1 class="font-khand text-7xl text-center font-bold">Menu</h1>
+
     <!-- sub navigation bar with categories-->
-    <div class="max-w-2xl mx-auto justify-items-center items-center" x-data="menu">
+    <div class="justify-items-center items-center" x-data="menu">
         <div class="border-b border-gray-300">
-            <nav class="flex space-x-8 justify-items-center items-center">
+            <nav class="flex gap-10 justify-center items-center text-center font-khand text-2xl">
                 @foreach($categories as $category)
-                    <button type="button" x-on:click="setActive({{ $category->id }})" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-black border-transparent hover:text-random2 hover:border-random2">
+                    <button type="button"
+                            x-on:click="setActive({{ $category->id }})"
+                            :class="{
+                                'border-b-2 border-random2': active === {{ $category->id }},
+                                'border-transparent': active !== {{ $category->id }}
+                            }"
+                            class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-black border-transparent hover:text-random2 hover:border-random2">
                         {{ $category->title }}
                     </button>
                 @endforeach
@@ -97,33 +105,32 @@
             <!-- description of each category -->
             <div>
                 @foreach($categories as $category)
-                    <div x-show="{{ $category->id }} === active" class="bg-white shadow-lg rounded-lg overflow-hidden">
-                            <h3 class="text-lg font-bold text-gray-800">{{ $category->description }}</h3>
+                    <div x-show="{{ $category->id }} === active" class="font-sans rounded-lg overflow-hidden justify-items-center items-center mt-5">
+                            <h3 class="text-xl text-gray-800 justify-items-center items-center text-center mx-16 font-khand font-extralight">{{ $category->description }}</h3>
                     </div>
                 @endforeach
             </div>
 
             <!-- products in each category -->
-            <div class="my-10">
+            <div class="my-10 grid grid-cols-3 gap-6 mx-10 justify-items-center items-center">
                 @foreach($products as $product)
-                    <div x-show="{{ $product->category_id }} === active" class="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img class="w-full h-48 object-cover" src="https://via.placeholder.com/300" alt="Product Image">
+                    <div x-show="{{ $product->category_id }} === active" class="overflow-hidden w-60 flex flex-col items-center">
+                        <img class="w-64 h-fit object-cover" src="{{ $product->getFirstMediaUrl('featured') }}" alt="Product Image">
                         <div class="p-5">
-                            <h2 class="text-xl font-semibold mb-2">
+                            <h2 class="text-xl font-semibold mb-2 text-center">
                                 {{ $product->name }}
                             </h2>
-                            <p class="text-gray-600 mb-4">This is a brief description of product 1.</p>
-                            <span class="text-lg font-bold text-gray-800">{{ $product->price }}</span>
+                            <br>
+                            <p class="text-gray-600 mb-4 text-center">{{ $product->description }}</p>
+                            <div class="text-lg font-bold text-gray-800 text-center justify-items-center">${{ $product->price }}</div>
                             <div class="mt-4">
-                                <button class="w-full bg-indigo-600 text-white font-bold py-2 rounded hover:bg-indigo-500 transition duration-200">
+                                <button class="w-full bg-somegreen text-random font-bold py-2 rounded hover:text-black transition duration-200">
                                     Add to Cart
                                 </button>
                             </div>
                         </div>
                     </div>
                 @endforeach
-                <ul role="list" class="grid grid-cols-4 gap-6">
-                </ul>
             </div>
 
 

@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -37,12 +38,18 @@ class ProductController extends Controller
     {
         $validated = $request->validated();
 
-        //create slug
-        $validated['slug'] = \Str::slug($validated['name']);
+        // Create slug
+        $validated['slug'] = Str::slug($validated['name']);
 
-        Product::create($validated);
+        // Create product and assign it to a variable
+        $product = Product::create($validated);
 
-        return redirect()->route('products.index');
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            $product->addMediaFromRequest('image')->toMediaCollection('featured');
+        }
+
+        return redirect()->route('products.index')->with('success', 'Product created successfully.');
     }
 
     /**
@@ -88,6 +95,9 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->delete();
+
+        return redirect()->route('products.index');
     }
 }

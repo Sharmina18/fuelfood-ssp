@@ -40,7 +40,7 @@
 
         <div class="flex gap-6">
             <a href="/menu" class="text-black text-xl hover:text-random2">Menu</a>
-            <a href="/contact" class="text-black text-xl hover:text-random2">Contact</a>
+            <a href="/subs" class="text-black text-xl hover:text-random2">Subscription</a>
             <a href="/about" class="text-black text-xl hover:text-random2">About</a>
         </div>
         <span class="rotate-90">

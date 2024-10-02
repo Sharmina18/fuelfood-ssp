@@ -21,9 +21,9 @@
                         {{ __('Customers') }}
                     </x-nav-link>
 
-                    <x-nav-link href="{{ route('reservations.index') }}" :active="request()->routeIs('reservations.index')">
-                        {{ __('Reservations') }}
-                    </x-nav-link>
+{{--                    <x-nav-link href="{{ route('reservations.index') }}" :active="request()->routeIs('reservations.index')">--}}
+{{--                        {{ __('Reservations') }}--}}
+{{--                    </x-nav-link>--}}
 
                     <x-nav-link href="{{ route('categories.index') }}" :active="request()->routeIs('categories.index')">
                         {{ __('Categories') }}
