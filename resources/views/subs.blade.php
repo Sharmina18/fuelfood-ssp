@@ -82,11 +82,16 @@
 </header>
 
 <!-- MAIN CONTENT -->
-    <div class="text-center font-khand font-semibold text-black pb-20">
-        <h1 class="text-6xl">Subscription</h1>
+<!-- Title -->
+    <div class="text-center font-khand font-bold text-black pb-20">
+        <h1 class="text-7xl">Subscriptions</h1>
     </div>
 
-<div class="flex flex-row justify-center gap-52">
+<!--How we work-->
+<section>
+    <h1 class="text-4xl font-khand font-semibold text-black pb-20 px-10">How we work:</h1>
+
+    <div class="flex flex-row justify-center gap-52">
     <div class="w-64 flex flex-col justify-center items-center text-center">
         <img src="{{ asset('images/clipboard.png') }}" alt="Subscription" class="w-40 h-fit mb-5">
         <br>
@@ -107,12 +112,67 @@
         <h3 class="font-khand font-bold text-4xl">Heat, Eat & Enjoy</h3>
         <p class="font-khand text-random2 text-xl">Our fitness meals come fully prepared—just heat and enjoy—so you can focus on other things.</p>
     </div>
-</div>
+    </div>
+</section>
 
 <br><br><br>
 
+<!-- Pricing Chart -->
+<section>
+    <h1 class="text-4xl font-khand font-semibold text-black pb-20 px-10">Our Prices:</h1>
+
+    <div class="flex flex-row justify-center gap-20 mx-10">
+        <div class="w-96 flex flex-col justify-center items-center text-center bg-random3 p-10 rounded-3xl">
+            <img src="{{ asset('images/muscles.png') }}" alt="Subscription" class="w-40 h-fit mb-5">
+            <br>
+            <h3 class="font-khand font-bold text-4xl">Muscle Gain</h3>
+            <p class="font-khand text-random2 text-xl">Our Muscle Gain Meal Plan is designed to fuel your body with high-protein meals that support muscle recovery and growth.</p>
+            <div class="font-khand font-bold text-xl">
+            <p>1 week: $50</p>
+            <p>2 weeks: $70</p>
+            <p>1 month: $100</p>
+            </div>
+            <a href="#subsform" class="bg-somegreen text-2xl font-khand font-bold text-random px-6 py-2 mt-2 rounded-md hover:bg-somegreen hover:text-black">Get Now!</a>
+        </div>
+
+        <div class="w-96 flex flex-col justify-center items-center text-center bg-random3 p-10 rounded-3xl">
+            <img src="{{ asset('images/weightloss.png') }}" alt="Subscription" class="w-40 h-fit mb-2">
+            <br>
+            <h3 class="font-khand font-bold text-4xl">Weight Loss</h3>
+            <p class="font-khand text-random2 text-xl">Our Weight Loss Meal Plan offers low-calorie, nutrient-dense meals to help you shed pounds while staying satisfied. </p>
+            <div class="font-khand font-bold text-xl">
+                <p>1 week: $50</p>
+                <p>2 weeks: $70</p>
+                <p>1 month: $100</p>
+            </div>
+            <a href="#subsform" class="bg-somegreen text-2xl font-khand font-bold text-random px-6 py-2 mt-2 rounded-md hover:bg-somegreen hover:text-black">Get Now!</a>
+
+        </div>
+
+        <div class="w-96 flex flex-col justify-center items-center text-center bg-random3 p-10 rounded-3xl">
+            <img src="{{ asset('images/balance.png') }}" alt="Subscription" class="w-40 h-fit mb-3">
+            <br>
+            <h3 class="font-khand font-bold text-4xl">Maintain</h3>
+            <p class="font-khand text-random2 text-xl">Our Maintain Weight Meal Plan provides balanced meals designed to keep feeling energized while maintaining weight. </p>
+            <div class="font-khand font-bold text-xl">
+                <p>1 week: $50</p>
+                <p>2 weeks: $70</p>
+                <p>1 month: $100</p>
+            </div>
+            <a href="#subsform" class="bg-somegreen text-2xl font-khand font-bold text-random px-6 py-2 mt-2 rounded-md hover:bg-somegreen hover:text-black">Get Now!</a>
+
+        </div>
+    </div>
+</section>
+
+<br><br><br>
+
+<!-- Subscription Form -->
+<section id="subsform">
+<h1 class="text-4xl font-khand font-semibold text-black pb-20 px-10">Join Now and Get Your Meals:</h1>
+
 <div class="mx-auto max-w-4xl p-8 bg-random3 rounded-lg shadow-lg font-khand">
-    <h2 class="text-center font-khand font-semibold text-gray-900 pb-8 text-3xl">Join Now and Get Your Meals!</h2>
+    <h2 class="text-center font-khand font-semibold text-gray-900 pb-5 text-3xl">Meal Plan Subscription</h2>
 
     <form method="POST" class="space-y-6" action="{{ route('subscriptions.store') }}">
         @csrf
@@ -162,11 +222,9 @@
         </div>
     </form>
 </div>
-
+</section>
 
 <br><br><br>
-
-
 
 <footer class="bg-somegreen text-black font-khand pl-20">
     <div class="grid grid-cols-4 p-10">

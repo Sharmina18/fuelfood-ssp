@@ -22,8 +22,8 @@
                         </svg>
                     </div>
                 </div>
-                <h4 class="pt-20 font-bold text-somegreen text-3xl">Total Revenue</h4>
-                <h5 class="text-2xl font-bold">$3454</h5>
+                <h4 class="pt-20 font-bold text-somegreen text-3xl">Total Active Subscriptions</h4>
+                <h5 class="text-2xl font-bold">21</h5>
             </div>
             <!--/Metric Card 1-->
         </div>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <h4 class="pt-20 font-bold text-somegreen text-3xl">Total Customers</h4>
-                <h5 class="text-2xl font-bold">534</h5>
+                <h5 class="text-2xl font-bold">12</h5>
             </div>
             <!--/Metric Card 2-->
         </div>

@@ -31,6 +31,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CategorySeeder::class,
             ProductSeeder::class,
+            SubTypeSeeder::class,
+            PlanSeeder::class,
         ]);
 
         Subscription::factory(10)->create();

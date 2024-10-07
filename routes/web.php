@@ -10,6 +10,7 @@ use App\Http\Controllers\SubsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\PlanController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
@@ -39,6 +40,9 @@ Route::resource('customers', CustomerController::class)
     ->middleware('auth');
 
 Route::resource('products', ProductController::class)
+    ->middleware('auth');
+
+Route::resource('plans', PlanController::class)
     ->middleware('auth');
 
 Route::middleware([

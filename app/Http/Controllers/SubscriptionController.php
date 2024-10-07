@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreSubscriptionRequest;
 use App\Http\Requests\UpdateSubscriptionRequest;
+use App\Models\Plan;
 use App\Models\Subscription;
 
 class SubscriptionController extends Controller
@@ -13,8 +14,12 @@ class SubscriptionController extends Controller
      */
     public function index()
     {
+        //retrieve plans from database
+        $plans = Plan::all();
+
         return view('subscriptions.index', [
             'subscriptions' => Subscription::all(),
+            'plans' => $plans,
         ]);
     }
 
